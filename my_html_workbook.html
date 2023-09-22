@@ -18,7 +18,13 @@ Content-Length: 81
 
 <!DOCTYPE html>
 <html>
-
+  
+<h1>
+	<iframe width="420" height="315"
+	src="https://www.youtube.com/embed/4Stzj2_Rlo4">
+	</iframe>
+</h1>
+  
 <form action="/action_page.php" method="get" target="_blank">
   <label for="fname">First name:</label>
   <input type="text" id="fname" name="fname"><br><br>
@@ -48,6 +54,29 @@ Content-Length: 81
   <input type="text" id="Faculty" name="Faculty"><br><br>
   <input type="submit" value="Submit">
 </form>
+  
+<p>Get your coordinates.</p>
 
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+  
 </html>
 
