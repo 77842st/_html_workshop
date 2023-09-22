@@ -1,1 +1,15 @@
+GET /tsi.lv/students.html?name=value1&surname=value2&age=value3&ID=value4&faculty=value5
 
+POST /students HTTP/1.1
+Host: tsi.lv
+Accept: application/json
+Content-Type: application/json
+Content-Length: 81
+
+{
+  "name": "john",
+  "surname": "doe",
+  "age": 30,
+  "ID": 77842
+  "Faculty": "Engineering"
+}
