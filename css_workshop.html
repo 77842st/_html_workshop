@@ -19,7 +19,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="myCSS.css">
 
 </head>
 
@@ -69,8 +69,8 @@
 <p>Just like other programming languages, Sass allows the use of variables that can store information<br> you can use throughout your style sheet. For example, you can store a colour value in a variable at<br> the top of the file, and then use this variable when setting the colour of your elements. This enables<br> you to quickly change your colours without having to modify each line separately.</p>
 
 <p><b>For example:</b></p>
-
-<p><i>$font-stack:    Helvetica, sans-serif;<br>
+<div>
+<p class="code"><i>$font-stack:    Helvetica, sans-serif;<br>
 $primary-color: #333;<br><br>
 
 body {<br>
@@ -85,14 +85,14 @@ body {<br>
   color: #333;<br>
 }
 </i></p>
-
+</div>
 <h2><b>Nesting</b></h2>
 
 <p>Nesting is a double-edged sword. While it provides an excellent method for reducing the amount of<br> code you need to write, it can also lead to over-qualified CSS if not executed carefully. The idea is<br> to nest your CSS selectors in such a way as to mimic your HTML hierarchy.</p>
 
 <p>The following shows a basic navigation style that uses nesting:</p>
-
-<p><i>nav {<br>
+<div>
+<p class="code"><i>nav {<br>
   ul {<br>
     margin: 0;<br>
     padding: 0;<br>
@@ -108,10 +108,10 @@ body {<br>
   }<br>
 }
 </i></p>
-
+</div>
 <p><b>The CSS output is as follows:</b></p>
-
-<p><i>nav ul {<br>
+<div>
+<p class="code"><i>nav ul {<br>
   margin: 0;<br>
   padding: 0;<br>
   list-style: none;<br>
@@ -127,7 +127,7 @@ nav a {<br>
   text-decoration: none;<br>
 }
 </i></p>
-
+</div>
 <h2><b>Partials</b></h2>
 
 <p>Partials are smaller Sass files that can be imported (see next section) into other Sass files. Think of<br> partials as code snippets. With these code snippets, your CSS can now be modular and easier to<br> maintain. A partial is designated as such by naming it with a leading underscore: _partial.scss.<br>
@@ -135,8 +135,8 @@ Import
 </p>
 
 <p>Used with Partials (see previous section), the @import directive allows you to import your partial<br> files into the current file, to build one single CSS file. Be mindful of how many imports you're<br> using as an HTTP request will be generated for each one.</p>
-
-<p><i>// _reset.scss<br><br>
+<div>
+<p class="code"><i>// _reset.scss<br><br>
 
 html,<br>
 body,<br>
@@ -153,10 +153,13 @@ ol {<br>
 body {<br>
   font: 100% Helvetica, sans-serif;<br>
   background-color: #efefef;<br>
-}<br><br>
+}
+</i></p>
+</div>
 
-And the corresponding CSS output:<br><br>
-
+<p>And the corresponding CSS output:</p>
+<div>
+<p class="code"><i>
 html, body, ul, ol {<br>
   margin: 0;<br>
   padding: 0;<br>
@@ -169,14 +172,14 @@ body {<br>
 
 Note: When importing partials, you don't need to include the file extension or the underscore.
 </i></p>
-
+</div>
 <h2><b>Mixins</b></h2>
 
 <p><b>One of the advantages of using preprocessors is their ability to take complex, long-winded<br> code and simplify it. This is where mixins come in handy! </b></p>
 
 <p>For example, if you need to include the vendor prefixes, you can use a mixin instead. Take a look at<br> this example for border-radius:</p>
-
-<p><i>@mixin border-radius($radius) {<br>
+<div>
+<p class="code"><i>@mixin border-radius($radius) {<br>
   -webkit-border-radius: $radius;<br>
      -moz-border-radius: $radius;<br>
       -ms-border-radius: $radius;<br>
@@ -185,21 +188,21 @@ Note: When importing partials, you don't need to include the file extension or t
 
 .box { @include border-radius(10px); }
 </i></p>
-
+</div>
 <p>Notice the @mixin directive at the top. It has been given the name border-radius and uses the<br> variable $radius as its parameter. This variable is used to set the radius value for each element. </p>
 
 <p>Later, the @include directive is called, along with the mixin name (border-radius) and a parameter<br> (10px). Thus .box { @include border-radius(10px); }.</p>
 
 <p><b>The following CSS is produced:</b></p>
-
-<p><i>.box {<br>
+<div>
+<p class="code"><i>.box {<br>
   -webkit-border-radius: 10px;<br>
   -moz-border-radius: 10px;<br>
   -ms-border-radius: 10px;<br>
   border-radius: 10px;<br>
 }
 </i></p>
-
+</div>
 <h2><b>Extend/Inheritance</b></h2>
 
 <p>The @extend directive has been called one of Sass' most powerful features. After seeing it in action,<br> it's clear why.</p>
@@ -217,5 +220,7 @@ Note: When importing partials, you don't need to include the file extension or t
 <p><b>Tammy is an independent creative professional and the host of Roundabout: Creative Chaos.<br> She’s also the owner of Just Write Code, an independent production company located in West<br> Tennessee. For more information about Tammy, visit her website by clicking the icons above. </b></p>
 
   <script src="js/scripts.js"></script>
+</body>
+</html>
 </body>
 </html>
