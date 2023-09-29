@@ -1,1 +1,42 @@
+body {
+  background-color: #2B2727;
+  text-align: center;
+}
+h1 {
+  color: pink;
+  font-family: "Papyrus";	
+}
+h2 {
+  color: Orange;
+  font-family: "Papyrus";
+}
+h3 {
+  color: Orange;
+  font-family: "Papyrus";
+}
+p {
+  color: yellow;
+  font-family: "Comic Sans MS";
+}
+p.code {
+  color: #4FEEFA;
+  font-family: "Comic Sans MS";
+}
 
+li {
+  color: yellow;
+}
+
+ul {
+  display: table; 
+  border: 4px solid yellow; 
+  padding: 30px;
+  margin: 0 auto;
+}
+
+div {
+  width: 300px;
+  padding: 0px;
+  margin: 0 auto;
+  text-align: left;
+}
