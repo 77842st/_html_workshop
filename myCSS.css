@@ -15,16 +15,17 @@ h3 {
   font-family: "Papyrus";
 }
 p {
-  color: yellow;
+  color: white;
   font-family: "Comic Sans MS";
 }
-p.code {
+.code {
   color: #4FEEFA;
   font-family: "Comic Sans MS";
 }
 
 li {
   color: yellow;
+  font-family: "Comic Sans MS";
 }
 
 ul {
