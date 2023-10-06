@@ -2,6 +2,7 @@
 
 <html lang="en">
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,7 +20,8 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <link rel="stylesheet" href="myCSS.css">
+  <!-- <link rel="stylesheet" href="myCSS.css"> -->
+  <link rel="stylesheet" href="startbootstrap/css/styles.css">
 
   <script type = "text/javascript">
          
@@ -38,11 +40,11 @@
             window.onload = init;
          
       </script>
-  
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("div").on({
+  $(".code").on({
   mouseenter: function(){
     $(this).animate({margin: "+=100px"});
   },
@@ -74,10 +76,15 @@ $(document).ready(function(){
          <p>Click button below to move the image to right</p>
          <input type = "button" value = "Click Me" onclick = "moveRight();" />
 </form>
-  
-<p><i>Disclaimer: this is TSI University task for HTML, CSS and SASS workshop, not for publishing<br> anywhere on the media. Please include this disclaimer</i></p>
+ 
+<div class="container">
+<div class="col-auto">
 
-<h1><strong>What is Sass? Your guide to this<br> top CSS preprocessor</strong></h1>
+<div class="alert alert-info">
+<p><i>Disclaimer: this is TSI University task for HTML, CSS and SASS workshop, not for publishing<br> anywhere on the media. Please include this disclaimer</i></p>
+</div>
+
+<h1 class="display-1"><strong>What is Sass? Your guide to this<br> top CSS preprocessor</strong></h1>
 
 <p>By Tammy Coron January 10, 2020</p>
 
@@ -108,10 +115,12 @@ $(document).ready(function(){
 <h2><b>Syntax</b></h2>
 
 <p><b>Sass includes two syntax options:</b></p>
+<div class="well">
 <ul>
 <li>SCSS (Sassy CSS): Uses the .scss file extension and is fully compliant with CSS syntax</li>
 <li>Indented (simply called 'Sass'): Uses .sass file extension and indentation rather than<br> brackets; it is not fully compliant with CSS syntax, but it's quicker to write</li>
 </ul>
+</div>
 <p><i>Note that files can be converted from one syntax to the other using the sass-convert command.</i></p>
 
 <h2><b>Variables</b></h2>
@@ -119,8 +128,8 @@ $(document).ready(function(){
 <p>Just like other programming languages, Sass allows the use of variables that can store information<br> you can use throughout your style sheet. For example, you can store a colour value in a variable at<br> the top of the file, and then use this variable when setting the colour of your elements. This enables<br> you to quickly change your colours without having to modify each line separately.</p>
 
 <p><b>For example:</b></p>
-<div>
-<p class="code"><i>$font-stack:    Helvetica, sans-serif;<br>
+<div class="code">
+<p><i>$font-stack:    Helvetica, sans-serif;<br>
 $primary-color: #333;<br><br>
 
 body {<br>
@@ -141,8 +150,8 @@ body {<br>
 <p>Nesting is a double-edged sword. While it provides an excellent method for reducing the amount of<br> code you need to write, it can also lead to over-qualified CSS if not executed carefully. The idea is<br> to nest your CSS selectors in such a way as to mimic your HTML hierarchy.</p>
 
 <p>The following shows a basic navigation style that uses nesting:</p>
-<div>
-<p class="code"><i>nav {<br>
+<div class="code">
+<p><i>nav {<br>
   ul {<br>
     margin: 0;<br>
     padding: 0;<br>
@@ -160,8 +169,8 @@ body {<br>
 </i></p>
 </div>
 <p><b>The CSS output is as follows:</b></p>
-<div>
-<p class="code"><i>nav ul {<br>
+<div class="code">
+<p><i>nav ul {<br>
   margin: 0;<br>
   padding: 0;<br>
   list-style: none;<br>
@@ -185,8 +194,8 @@ Import
 </p>
 
 <p>Used with Partials (see previous section), the @import directive allows you to import your partial<br> files into the current file, to build one single CSS file. Be mindful of how many imports you're<br> using as an HTTP request will be generated for each one.</p>
-<div>
-<p class="code"><i>// _reset.scss<br><br>
+<div class="code">
+<p><i>// _reset.scss<br><br>
 
 html,<br>
 body,<br>
@@ -208,8 +217,8 @@ body {<br>
 </div>
 
 <p>And the corresponding CSS output:</p>
-<div>
-<p class="code"><i>
+<div class="code">
+<p><i>
 html, body, ul, ol {<br>
   margin: 0;<br>
   padding: 0;<br>
@@ -228,8 +237,8 @@ Note: When importing partials, you don't need to include the file extension or t
 <p><b>One of the advantages of using preprocessors is their ability to take complex, long-winded<br> code and simplify it. This is where mixins come in handy! </b></p>
 
 <p>For example, if you need to include the vendor prefixes, you can use a mixin instead. Take a look at<br> this example for border-radius:</p>
-<div>
-<p class="code"><i>@mixin border-radius($radius) {<br>
+<div class="code">
+<p><i>@mixin border-radius($radius) {<br>
   -webkit-border-radius: $radius;<br>
      -moz-border-radius: $radius;<br>
       -ms-border-radius: $radius;<br>
@@ -244,8 +253,8 @@ Note: When importing partials, you don't need to include the file extension or t
 <p>Later, the @include directive is called, along with the mixin name (border-radius) and a parameter<br> (10px). Thus .box { @include border-radius(10px); }.</p>
 
 <p><b>The following CSS is produced:</b></p>
-<div>
-<p class="code"><i>.box {<br>
+<div class="code">
+<p><i>.box {<br>
   -webkit-border-radius: 10px;<br>
   -moz-border-radius: 10px;<br>
   -ms-border-radius: 10px;<br>
@@ -269,8 +278,9 @@ Note: When importing partials, you don't need to include the file extension or t
 
 <p><b>Tammy is an independent creative professional and the host of Roundabout: Creative Chaos.<br> She’s also the owner of Just Write Code, an independent production company located in West<br> Tennessee. For more information about Tammy, visit her website by clicking the icons above. </b></p>
 
-  <script src="js/scripts.js"></script>
-</body>
-</html>
+</div>
+</div>
+<script src="startbootstrap/js/scripts.js"</script>
+ 
 </body>
 </html>
