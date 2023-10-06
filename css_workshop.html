@@ -39,6 +39,31 @@
          
       </script>
   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("div").on({
+  mouseenter: function(){
+    $(this).animate({margin: "+=100px"});
+  },
+  mouseleave: function(){
+    $(this).animate({margin: "-=100px"});
+  }
+ });
+});
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("ul").on({
+  click: function(){
+    $(this).hide();
+  }
+ });
+});
+</script>
+  
 </head>
 
 <body>
